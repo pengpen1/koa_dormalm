@@ -1,7 +1,7 @@
 /**
  * @description 管理员的数据访问对象
  * @description Data Access Objects for Administrators
- * @author 梁凤波, Peter Liang
+ * @author 彭富权, Peter Liang
  */
 
 const { Admin } = require('@models/admin')
@@ -75,6 +75,7 @@ class AdminDao {
     const scope = 'bh';
     try {
       // 查询管理员是否存在
+      //传递一个或多个作用域的名称来应用作用域
       const admin = await Admin.scope(scope).findOne({
         where: {
           id

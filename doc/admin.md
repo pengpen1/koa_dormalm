@@ -93,7 +93,7 @@ config.headers['Authorization'] = _encode();
     "errorCode": 0,
     "data": {
         "id": 3,
-        "nickname": "梁凤波",
+        "nickname": "彭富权",
         "email": "itbo@163.com"
     }
 }

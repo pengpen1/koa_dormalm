@@ -56,7 +56,7 @@ Admin.init({
   tableName: 'admin'
 })
 
-
+// 定义的模型是类本身
 module.exports = {
   Admin
 }

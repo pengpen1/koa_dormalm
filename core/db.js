@@ -20,14 +20,18 @@ const sequelize = new Sequelize(dbName, user, password, {
     timestamps: true,
     // delete_time
     paranoid: true,
+    //创建时间字段别名或不展示
     createdAt: 'created_at',
+    //创建时间字段别名或不展示
     updatedAt: 'updated_at',
     deletedAt: 'deleted_at',
     // 把驼峰命名转换为下划线
     underscored: true,
     scopes: {
       bh: {
+        // 模型作用域，重用代码
         attributes: {
+          // 查找器对象，排除下面的属性
           exclude: ['password', 'updated_at', 'deleted_at', 'created_at']
         }
       },
@@ -41,8 +45,10 @@ const sequelize = new Sequelize(dbName, user, password, {
 })
 
 // 创建模型
+// 同步所有模型，如果表不存在,则创建该表(如果已经存在,则不执行任何操作)
 sequelize.sync({ force: false })
 
+// 测试链接
 sequelize.authenticate().then(res => {
   console.log('Connection has been established successfully.');
 }).catch(err => {
