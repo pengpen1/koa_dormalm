@@ -10,7 +10,7 @@
 
 ## Koa安装
 
-```
+```js
 # 安装
 npm intall koa
 
@@ -19,17 +19,17 @@ npm intall koa
   "axios": "^0.18.0",
   "basic-auth": "^2.0.1",
   "bcryptjs": "^2.4.3",
-  "jsonwebtoken": "^8.4.0",
+  "jsonwebtoken": "^8.4.0", //jwt
   "koa": "^2.7.0",
   "koa-bodyparser": "^4.2.1",
   "koa-router": "^7.4.0",
   "koa-static": "^5.0.0",
   "lodash": "^4.17.11",
   "mysql2": "^1.6.5",
-  "npm-check": "^5.9.0",
-  "require-directory": "^2.1.1",
-  "sequelize": "^5.6.1",
-  "validator": "^10.11.0"
+  "npm-check": "^5.9.0",// 升级依赖包
+  "require-directory": "^2.1.1",//实现自动注册
+  "sequelize": "^5.6.1",//ORM框架
+  "validator": "^10.11.0"//验证器
 },
 ```
 
@@ -49,7 +49,6 @@ app.listen(5000)
 ## Koa中间件
 koa2一切都是中间件，
 koa2 的中间件是洋葱模型。基于async/await 可以更好的处理异步操作。
-![img](http://www.json119.com/content/images/2018/10/1.png)
 
 1. 一个请求到一旦到后端，就开始接触洋葱的最外层。
 2. 遇到一个next()，就进入下一层。不过值得提醒的是，异步函数的next(),与同步函数的next(),不是在同一个空间的，我们可以假想一个“异步空间栈”，后入先出。
