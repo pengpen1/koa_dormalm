@@ -46,7 +46,6 @@ User.init({
         defaultValue: 1,
         comment: '用户状态:0-禁用,1-正常'
     },
-    // 学号
     created_at: {
         type: DataTypes.DATE,
         allowNull: false,
